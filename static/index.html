@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Research System | Launch IO Hackathon 2025</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>Multi-Agent Research System</h1>
+                    <span class="badge">Launch IO Hackathon 2025</span>
+                </div>
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">AI Agents</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-research">0</span>
+                        <span class="stat-label">Research Tasks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>AI-Powered Research with 8 Specialized Agents</h2>
+                    <p>Revolutionary multi-agent system that performs autonomous research, analysis, and report generation using IO Intelligence APIs.</p>
+                    
+                    <!-- Research Form -->
+                    <div class="research-form-container">
+                        <form id="research-form" class="research-form">
+                            <div class="form-group">
+                                <label for="topic">Research Topic</label>
+                                <input type="text" id="topic" name="topic" placeholder="Enter your research topic..." required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mode">Research Mode</label>
+                                    <select id="mode" name="mode">
+                                        <option value="standard">Standard Research</option>
+                                        <option value="multi-agent" selected>Multi-Agent Research</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="depth">Research Depth</label>
+                                    <select id="depth" name="depth">
+                                        <option value="quick">Quick</option>
+                                        <option value="standard" selected>Standard</option>
+                                        <option value="detailed">Detailed</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="format">Output Format</label>
+                                    <select id="format" name="format">
+                                        <option value="markdown" selected>Markdown</option>
+                                        <option value="json">JSON</option>
+                                        <option value="txt">Plain Text</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" id="start-research">
+                                <i class="fas fa-rocket"></i>
+                                Start Research
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agents Section -->
+            <section class="agents-section">
+                <h3><i class="fas fa-users"></i> Specialized AI Agents</h3>
+                <div class="agents-grid" id="agents-grid">
+                    <!-- Agents will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progress-section" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <h3 id="progress-title">Research in Progress</h3>
+                        <div class="progress-stats">
+                            <span id="progress-percentage">0%</span>
+                            <span id="progress-phase">Initializing...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    
+                    <div class="progress-message" id="progress-message">
+                        Starting research process...
+                    </div>
+                    
+                    <div class="active-agents" id="active-agents">
+                        <!-- Active agents will be shown here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="results-container">
+                    <div class="results-header">
+                        <h3><i class="fas fa-file-alt"></i> Research Results</h3>
+                        <div class="results-actions">
+                            <button class="btn btn-secondary" id="download-report">
+                                <i class="fas fa-download"></i>
+                                Download Report
+                            </button>
+                            <button class="btn btn-secondary" id="copy-report">
+                                <i class="fas fa-copy"></i>
+                                Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="results-content">
+                        <div class="results-metadata" id="results-metadata">
+                            <!-- Metadata will be populated here -->
+                        </div>
+                        
+                        <div class="results-report" id="results-report">
+                            <!-- Report content will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research History -->
+            <section class="history-section">
+                <h3><i class="fas fa-history"></i> Research History</h3>
+                <div class="history-container" id="history-container">
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <p>No research tasks yet. Start your first research above!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 Multi-Agent Research System | Built for Launch IO Hackathon</p>
+                    <p>Powered by IO Intelligence APIs</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" onclick="showAbout()"><i class="fas fa-info-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Initializing AI Agents...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
