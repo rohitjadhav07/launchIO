@@ -1200,17 +1200,8 @@ async def execute_report_generation(report_id: str, request: ReportRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    
-    # Set up environment
-    if not os.environ.get("IO_API_KEY"):
-        os.environ["IO_API_KEY"] = "io-v2-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lciI6ImNjOTcyYTVhLTM1MTAtNDFmMC05ODA3LWY2NDc4M2Y0YTFlZCIsImV4cCI6NDkwNjYyMDAyNn0.D3nqreeXTd-MZUjKNkNr6-oE8SYQGDMYQGUfN84G2rGbaWxFVA0GvbXEvYmfrHstdRlF-CQSpMO5Awpjiic-Kw"
-    
-    # Get port from environment (Railway sets this)
-    port = int(os.environ.get("PORT", 5000))
-    
     print("🚀 Starting Launch IO Hackathon Web Interface...")
-    print(f"🌐 Server starting on port: {port}")
+    print("🌐 Open your browser to: http://localhost:5000")
     print("🤖 Real IO Intelligence API Integration!")
     print("✨ Features: Search History + Report Generator")
-    
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="127.0.0.1", port=5000)

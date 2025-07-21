@@ -1520,9 +1520,6 @@ if __name__ == "__main__":
     if not os.environ.get("IO_API_KEY"):
         os.environ["IO_API_KEY"] = "io-v2-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lciI6ImNjOTcyYTVhLTM1MTAtNDFmMC05ODA3LWY2NDc4M2Y0YTFlZCIsImV4cCI6NDkwNjYyMDAyNn0.D3nqreeXTd-MZUjKNkNr6-oE8SYQGDMYQGUfN84G2rGbaWxFVA0GvbXEvYmfrHstdRlF-CQSpMO5Awpjiic-Kw"
     
-    # Get port from environment (Railway sets this)
-    port = int(os.environ.get("PORT", 8000))
-    
     print("🚀 Launch IO - Complete Unified Platform")
     print("=" * 60)
     print("🌟 Features Available:")
@@ -1538,8 +1535,8 @@ if __name__ == "__main__":
     print("  • Real-time Progress Tracking")
     print("  • Web Interface with All Features")
     print("=" * 60)
-    print(f"🌐 Starting server on port: {port}")
+    print("🌐 Starting server at: http://localhost:8000")
     print("📱 Access all features from the web interface")
     print("=" * 60)
     
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
